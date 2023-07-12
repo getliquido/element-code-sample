@@ -137,3 +137,12 @@ header h1 {
 .payment-box__btn:hover {
   background-color: rgba(0, 0, 0, 0.2);
 }
+
+
+.code-link {
+  color: rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+.code-link:hover {
+  color: var(--themeColor);
+}
