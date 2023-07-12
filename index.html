@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Liquido Element Examples</title>
+  <link rel="icon" href="./img/favicon.ico" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="./css/example1.css" />
+</head>
+<body>
+  <div class="examples-body">
+    <header>
+      <h1>Liquido</h1>
+    </header>
+
+    <!-- example1 -->
+    <form id="example1" class="payment-box payment-box--loading">
+      <div class="payment-box__title">Example 1</div>
+      <!-- pan -->
+      <div class="payment-box__item">
+        <label id="example1__label-pan" class="payment-box__item__label">Card number</label>
+        <div class="payment-box__item__container" id="example1__pan"></div>
+        <div class="payment-box__item__error"></div>
+      </div>
+      <!-- expiration + cvv -->
+      <div class="payment-box__item-group">
+        <div class="payment-box__item">
+          <label id="example1__label-expiration" class="payment-box__item__label">Expiration</label>
+          <div class="payment-box__item__container" id="example1__expiration"></div>
+          <div class="payment-box__item__error"></div>
+        </div>
+
+        <div class="payment-box__item">
+          <label id="example1__label-cvv" class="payment-box__item__label">CVV</label>
+          <div class="payment-box__item__container" id="example1__cvv"></div>
+          <div class="payment-box__item__error" id="example1__error--cvv"></div>
+        </div>
+      </div>
+      <!-- name -->
+      <div class="payment-box__item">
+        <label for="example1__name" class="payment-box__item__label">Cardholder</label>
+        <div class="payment-box__item__container" id="example1__name">
+          <input type="text" placeholder="Cardholder name" name="cc-name" id="example1__name-input" />
+        </div>
+        <div class="payment-box__item__error"></div>
+      </div>
+      <!-- email -->
+      <div class="payment-box__item">
+        <label for="example1__email" class="payment-box__item__label">Email</label>
+        <div class="payment-box__item__container" id="example1__email">
+          <input type="text" placeholder="email" name="email" id="example1__email-input" />
+        </div>
+        <div class="payment-box__item__error"></div>
+      </div>
+      <!-- submit button -->
+      <div class="payment-box__btn" id="example1__btn">Submit</div>
+    </form>
+
+    <form id="example2" class="payment-box payment-box--loading">
+      <div class="payment-box__title">Example 2</div>
+      <!-- card -->
+      <div class="payment-box__item">
+        <label id="example2__label-card" class="payment-box__item__label">Credit Card</label>
+        <div class="payment-box__item__container" id="example2__card"></div>
+        <div class="payment-box__item__error"></div>
+      </div>
+      <!-- name -->
+      <div class="payment-box__item">
+        <label for="example2__name" class="payment-box__item__label">Cardholder</label>
+        <div class="payment-box__item__container" id="example2__name">
+          <input type="text" placeholder="Cardholder name" name="cc-name" id="example2__name-input" />
+        </div>
+        <div class="payment-box__item__error"></div>
+      </div>
+      <!-- email -->
+      <div class="payment-box__item">
+        <label for="example2__email" class="payment-box__item__label">Email</label>
+        <div class="payment-box__item__container" id="example2__email">
+          <input type="text" placeholder="email" name="email" id="example2__email-input" />
+        </div>
+        <div class="payment-box__item__error"></div>
+      </div>
+      <!-- submit button -->
+      <div class="payment-box__btn" id="example2__btn">Submit</div>
+    </form>
+  </div>
+  <script type="text/javascript" src="https://js.dev.liquido.com/element.js"></script>
+  <script type="text/javascript" src="./js/index.js"></script>
+  <script type="text/javascript" src="./js/example1.js"></script>
+  <script type="text/javascript" src="./js/example2.js"></script>
+</body>
+</html>

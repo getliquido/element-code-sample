@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body {
+  width: 100%;
+  height: 100%;
+  background-color: whitesmoke;
+}
+
+.examples-body {
+  padding: env(safe-area-inset-top) max(20px, env(safe-area-inset-right))
+    max(20px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
+  margin: 0 auto;
+  width: 100%;
+  max-width: 768px;
+  min-width: 375px;
+}
+
+header {
+  margin-bottom: 50px;
+  width: 100%;
+}
+header h1 {
+  padding: 25px 0;
+  font-size: 30px;
+  border-bottom: 1px solid rgba(92, 105, 117, 0.2);
+}
+
+:root {
+  --gutter: 18px;
+  --margin: 8px;
+  --itemHeight: 50px;
+  --themeColor: #0068ff;
+  --dangerColor: #f54e4e;
+}
+.payment-box {
+  display: flex;
+  margin-bottom: 50px;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+}
+.payment-box--loading {
+  position: relative;
+}
+.payment-box--loading::before {
+  display: flex;
+  position: absolute;
+  content: 'Loading...';
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 24px;
+  background-color: #fff;
+}
+.payment-box__title {
+  margin-bottom: var(--gutter);
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+}
+.payment-box__item {
+  margin-bottom: var(--gutter);
+  width: 100%;
+}
+.payment-box__item__label {
+  display: inline-block;
+  margin-bottom: var(--margin);
+  cursor: pointer;
+}
+.payment-box__item__container {
+  padding: 10px;
+  height: var(--itemHeight);
+  border: 1px solid #000;
+  border-radius: 4px;
+}
+.payment-box__item__container input {
+  width: 100%;
+  height: 100%;
+  font-size: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  line-height: var(--itemHeight);
+  letter-spacing: inherit;
+  color: inherit;
+  outline: none;
+  border: none;
+  background-color: inherit;
+}
+.payment-box__item__container--focus {
+  border-color: var(--themeColor);
+}
+.payment-box__item__container--focus input {
+  color: var(--themeColor);
+}
+.payment-box__item__container--error {
+  border-color: var(--dangerColor);
+}
+.payment-box__item-group {
+  display: flex;
+  width: 100%;
+}
+.payment-box__item-group > .payment-box__item+.payment-box__item {
+  margin-left: var(--margin);
+}
+.payment-box__item__error {
+  height: 0;
+  font-size: inherit;
+  line-height: 20px;
+  color: var(--dangerColor);
+}
+.payment-box__item__error--show {
+  margin-top: 5px;
+  height: initial;
+  min-height: 20px;
+  line-height: 20px;
+}
+.payment-box__btn {
+  display: flex;
+  margin-top: var(--gutter);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: var(--itemHeight);
+  border: 1px solid #000;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.payment-box__btn:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
