@@ -1,4 +1,4 @@
-# Liquido-ELements-examples
+# Liquido-Element-examples
 
 ## Example 1
 
