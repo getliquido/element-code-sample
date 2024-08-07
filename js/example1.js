@@ -31,20 +31,20 @@
   let isPanReady = false,
     isExpirationReady = false,
     isCvvReady = false,
-    closeLaoding = () => {
-      if (isPanReady && isExpirationReady && isCvvReady) triggleBoxLaoding('example1')
+    closeLoading = () => {
+      if (isPanReady && isExpirationReady && isCvvReady) triggleBoxLoading('example1')
     }
   pan.addEventListener('ready', () => {
     isPanReady = true
-    closeLaoding()
+    closeLoading()
   })
   expiration.addEventListener('ready', () => {
     isExpirationReady = true
-    closeLaoding()
+    closeLoading()
   })
   cvv.addEventListener('ready',  () => {
     isCvvReady = true
-    closeLaoding()
+    closeLoading()
   })
   
   // element.mount(dom | selector) => mount element
@@ -142,16 +142,20 @@
     if (!name) showErrMsg(nameContainerId, emptyText)
     if (!email) showErrMsg(emailContainerId, emptyText)
     if (isPanEmpty || isExpirationEmpty || isCvvEmpty || !name || !email) return
-    triggleBoxLaoding('example1', true)
+    triggleBoxLoading('example1', false)
     liquidoInstance.createToken(pan, {
       name,
       email
     }).then((result) => {
-      console.log(result.data.cardId)
+      const msg = `cardId: ${result.data.cardId}`
+      console.log(msg)
+      alert(msg)
     }).catch((result) => {
-      alert(result.error.message)
+      const error = `fail: ${result.error.message}`
+      console.log(error)
+      alert(error)
     }).finally(() => {
-      triggleBoxLaoding('example1')
+      triggleBoxLoading('example1')
     })
   })
 })()

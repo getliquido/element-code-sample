@@ -25,12 +25,12 @@
 
   // element.addEventListener('ready', callback) => close loading
   let isCardReady = false,
-    closeLaoding = () => {
-      if (isCardReady) triggleBoxLaoding('example2')
+    closeLoading = () => {
+      if (isCardReady) triggleBoxLoading('example2')
     }
   card.addEventListener('ready', () => {
     isCardReady = true
-    closeLaoding()
+    closeLoading()
   })
 
   // element.mount(dom | selector) => mount element
@@ -92,16 +92,20 @@
     if (!name) showErrMsg(nameContainerId, emptyText)
     if (!email) showErrMsg(emailContainerId, emptyText)
     if (isCardEmpty || !name || !email) return
-    triggleBoxLaoding('example2', true)
+    triggleBoxLoading('example2', false)
     liquidoInstance.createToken(card, {
       name,
       email
     }).then((result) => {
-      console.log(result.data.cardId)
+      const msg = `cardId: ${result.data.cardId}`
+      console.log(msg)
+      alert(msg)
     }).catch((result) => {
-      alert(result.error.message)
+      const error = `fail: ${result.error.message}`
+      console.log(error)
+      alert(error)
     }).finally(() => {
-      triggleBoxLaoding('example1')
+      triggleBoxLoading('example1')
     })
   })
 })()

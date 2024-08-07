@@ -3,7 +3,7 @@ const liquidoInstance = liquido('your_api_key')
 
 const getId = (prefix) => ((suffix) => suffix ? prefix + '__' + suffix : prefix)
 
-const triggleBoxLaoding = (boxId, close = true) => {
+const triggleBoxLoading = (boxId, close = true) => {
   const box = document.getElementById(boxId),
     loadingClassName = 'payment-box--loading'
   if (close) {
