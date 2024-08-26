@@ -151,9 +151,8 @@
       console.log(msg)
       alert(msg)
     }).catch((result) => {
-      const error = `fail: ${result.error.message}`
-      console.log(error)
-      alert(error)
+      console.log(`fail: ${result}`)
+      alert('fail')
     }).finally(() => {
       triggleBoxLoading('example1')
     })
